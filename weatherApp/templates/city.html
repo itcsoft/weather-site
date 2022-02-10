@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Прогноз погоды {% endblock %}
+
+
+{% block content %} 
+{% for city in cities %}
+<main class="flex-shrink-0">
+    <div class="container">
+      <h1 class="mt-5">Прогноз погоды в городе: {{city}}</h1>
+      <p class="lead">Температура в городе {{city}}: {{city.temperature}} °С в {{city.sent_at}}</p>
+      <!-- <p class="lead">Максимальная температура в городе {{city}}: {{max_temp}} °С</p>
+      <p class="lead">Минимальная температура в городе {{city}}: {{min_temp}} °С</p>
+      <p class="lead"> Ощущается как: {{feels_like}} &#8451; </p>
+      <p class="lead">Состояние: {{condition}}</p>
+      <img src="https://openweathermap.org/img/wn/{{icon}}@4x.png" alt="icon"> -->
+    </div>
+  </main>
+
+{% endfor %}
+{% endblock %}
+
+
